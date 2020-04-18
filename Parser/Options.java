@@ -1,9 +1,10 @@
 package Parser;
 import Helpers.*;
+import java.util.*;
 public class Options{
     //defining the Rules
-    private final ArrayList<String> optionName = new ArrayList<>();
-    public Command(){
+    private static  final ArrayList<String> optionName = new ArrayList<>();
+    public Options(){
         optionName.add(Constants.CLIPBOARD[0]);
         optionName.add(Constants.CLIPBOARD[1]);
         optionName.add(Constants.HELP[0]);
@@ -11,7 +12,7 @@ public class Options{
         optionName.add(Constants.FILE[0]);
         optionName.add(Constants.FILE[1]);
     }
-    public boolean containsOption(String option){
+    public static boolean containsOption(String option){
         return optionName.contains(option);
     }
 
