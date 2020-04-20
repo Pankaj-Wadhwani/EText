@@ -1,6 +1,8 @@
+package helpers.clipboardhelper;
 import java.awt.datatransfer.*;
 import java.awt.*;
 import java.io.*;
+
 public class ClipboardHelper{
     public String getClipboardContents(){
         try{

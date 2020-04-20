@@ -1,3 +1,4 @@
+package helpers.filehelper;
 import java.io.*;
 class FileHelper{
     public String getContent(String filename){
