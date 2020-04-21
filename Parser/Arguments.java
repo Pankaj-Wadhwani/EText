@@ -9,9 +9,6 @@ public class Arguments{
 
     public static boolean isValidRule(String text,String whichRule){
         Pattern p = null;
-//        if(whichRule ==1)
-//            p= Pattern.compile(Arguments.RULE1);
-//        else if(whichRule==2)
         p = Pattern.compile(whichRule);
         Matcher m = p.matcher(text);
         return m.find();
