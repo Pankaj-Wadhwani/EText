@@ -14,7 +14,7 @@ public class Writer {
 //    private static String api_paste_code = ""; // your paste text
     private static final String API_PASTE_PRIVATE = "0"; // 0=public 1=unlisted 2=private
 //    private static String api_paste_name = ""; // name or title of your paste
-    private static final String API_PASTE_EXPIRE_DATE = "10M";
+    private static final String API_PASTE_EXPIRE_DATE = "N";
 //    private static final String api_paste_format = "php";
     private static final String API_USER_KEY = "787c84251cf7b08378d22c547e838bf4"; // if an invalid or expired API_USER_KEY is used, an error will spawn. If no API_USER_KEY is used, a guest paste will be created
 
