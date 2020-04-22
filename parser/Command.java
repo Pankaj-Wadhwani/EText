@@ -1,6 +1,6 @@
-package Parser;
+package parser;
 import  java.util.*;
-import Helpers.*;
+import helper.*;
 public class Command{
     private final ArrayList<String> commandName = new ArrayList<>();
     public Command(){

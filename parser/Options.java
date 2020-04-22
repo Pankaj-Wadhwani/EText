@@ -1,5 +1,5 @@
-package Parser;
-import Helpers.*;
+package parser;
+import helper.*;
 import java.util.*;
 public class Options{
     //defining the Rules

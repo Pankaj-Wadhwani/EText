@@ -1,8 +1,8 @@
 
-package Parser;
+package parser;
 import java.util.*;
-import Parser.*;
-import Helpers.*;
+import parser.*;
+import helper.*;
 class ParseEText{
 
     private static final List<String> readRule = new ArrayList<>();

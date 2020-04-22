@@ -1,4 +1,4 @@
-package Helpers;
+package helper;
 public interface Constants{
     String READ = "read";
     String WRITE = "write";

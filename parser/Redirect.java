@@ -1,6 +1,6 @@
-package Parser;
+package parser;
 import java.util.*;
-import Helpers.*;
+import helper.*;
 class Redirect{
     public static void main(String[] args) {
         ParseEText parse = new ParseEText();
