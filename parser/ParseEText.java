@@ -87,7 +87,7 @@ class ParseEText{
         List<String> commandList = addingCommandToList(args);
         try{
             if(commandList.size()>2){
-                for(int i=1;i>=0;i--){
+                for(int i=2;i>=0;i--){
                     if((commandList.get(i).equals(Constants.FILE[0]) ||commandList.get(i).equals(Constants.FILE[1]))&& commandInfoWithRules.containsKey(getShortOption(commandList.get(i)))){
                         checkArg(i,commandList);
                     }
