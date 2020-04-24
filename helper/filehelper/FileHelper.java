@@ -1,7 +1,7 @@
-package helpers.filehelper;
+package helper.filehelper;
 import java.io.*;
 class FileHelper{
-    public String getContent(String filename){
+    public static String getContent(String filename){
         StringBuilder content = new StringBuilder();
         try{
             String temp;
@@ -17,7 +17,7 @@ class FileHelper{
         }
         return content.toString();
     }
-    public boolean putContent(String filename, String content) {
+    public static boolean putContent(String filename, String content) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(filename));
             bw.write(content);

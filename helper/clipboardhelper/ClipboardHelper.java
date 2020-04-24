@@ -1,10 +1,10 @@
-package helpers.clipboardhelper;
+package helper.clipboardhelper;
 import java.awt.datatransfer.*;
 import java.awt.*;
 import java.io.*;
 
 public class ClipboardHelper{
-    public String getClipboardContents(){
+    public static String getClipboardContents(){
         try{
             System.setErr(new PrintStream("error.log"));
             Clipboard c=Toolkit.getDefaultToolkit().getSystemClipboard();
@@ -16,7 +16,7 @@ public class ClipboardHelper{
         }
 
     }
-    public boolean putContents(String text){
+    public static boolean putContents(String text){
        try{
              Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
              Transferable transferable = new StringSelection(text);
