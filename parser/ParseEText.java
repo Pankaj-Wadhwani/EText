@@ -24,6 +24,7 @@ class ParseEText{
     private Command cmd = new Command();
     private Options opt = new Options();
     private Map<String,String> cmdArgs = new HashMap<>();
+    private int start=1;
 
     public Map<String,String> getCmdArgs(){
         return cmdArgs;
@@ -87,11 +88,13 @@ class ParseEText{
         List<String> commandList = addingCommandToList(args);
         try{
             if(commandList.size()>2){
-                for(int i=2;i>=0;i--){
+                if(commandList.get(0)==Constants.READ)
+                    start=2;
+                for(int i=start;i>=0;i--){
                     if((commandList.get(i).equals(Constants.FILE[0]) ||commandList.get(i).equals(Constants.FILE[1]))&& commandInfoWithRules.containsKey(getShortOption(commandList.get(i)))){
                         checkArg(i,commandList);
                     }
-                    else if(i==1 &&(commandList.get(i).equals(Constants.CLIPBOARD[0]) ||commandList.get(i).equals(Constants.CLIPBOARD[1])) && commandInfoWithRules.containsKey(getShortOption(commandList.get(i)))){
+                    else if(i==1 && (commandList.get(i).equals(Constants.CLIPBOARD[0]) ||commandList.get(i).equals(Constants.CLIPBOARD[1])) && commandInfoWithRules.containsKey(getShortOption(commandList.get(i)))){
                         cmdArgs.put(Constants.CLIPBOARD[0],null);
                         commandList.remove(i);
                     }

@@ -4,7 +4,7 @@ public interface Constants{
     String WRITE = "write";
     String APPEND = "append";
     String[] CLIPBOARD = {"-c","--clipboard"};
-    String[] FILE = {"-f","--FILE"};
+    String[] FILE = {"-f","--file"};
     String[] HELP = {"-h","--help"};
 }
 //extext read -f tarun filename
