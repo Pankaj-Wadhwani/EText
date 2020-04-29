@@ -29,11 +29,19 @@ public class Reader {
 
     public static String read(String pasteTitle) {
         try {
-            String pasteKey = APIHelper.getPasteKey(pasteTitle);
-//            System.out.println(pasteKey);
-            String postParams = "api_option=" + API_READ_OPTION + "&api_user_key=" + API_USER_KEY + "&api_dev_key=" + API_DEV_KEY + "&api_paste_key=" + pasteKey + "";
-            return ConnectionHelper.sendPOST(READ_URL, postParams);
+            if(pasteTitle.equals("")){
+                System.out.println("Empty name!!");
+            }else {
+                String pasteKey = APIHelper.getPasteKey(pasteTitle);
 
+                if(pasteKey.equals("")) {
+                    System.out.println(pasteTitle+" not found");
+                    return "";
+                }else {
+                    String postParams = "api_option=" + API_READ_OPTION + "&api_user_key=" + API_USER_KEY + "&api_dev_key=" + API_DEV_KEY + "&api_paste_key=" + pasteKey + "";
+                    return ConnectionHelper.sendPOST(READ_URL, postParams);
+                }
+            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         } catch (IOException ioe) {

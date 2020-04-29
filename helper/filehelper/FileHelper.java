@@ -1,6 +1,6 @@
 package helper.filehelper;
 import java.io.*;
-class FileHelper{
+public class FileHelper{
     public static String getContent(String filename){
         StringBuilder content = new StringBuilder();
         try{

@@ -50,8 +50,8 @@ public class APIHelper{
     }
     public static String getPasteKey(String pasteTitle){
         String pastes = getAllPastes();
-        String pattern = "<paste_key>(.*?)<\\/paste_key>.*?<paste_title>"+pasteTitle+"?<\\/paste_title>";
-        String pasteKey = Helper.findUsingRegex(pastes,pattern);
+        String pattern = "<paste_key>(.*?)<\\/paste_key>.*?<paste_title>(.*?)<\\/paste_title>";
+        String pasteKey = Helper.findUsingRegex(pastes,pattern,pasteTitle);
         return pasteKey;
     }
 }

@@ -2,8 +2,8 @@ package parser;
 import operator.readoperator.*;
 import operator.writeoperator.*;
 import operator.appendoperator.*;
-import helper.clipboardhelper;
-import helper.fileboardhelper;
+import helper.clipboardhelper.*;
+import helper.filehelper.*;
 import java.util.*;
 import helper.*;
 class Redirect{
@@ -26,7 +26,9 @@ class Redirect{
              wrote = ClipboardHelper.putContents(content);
         return wrote;
     }
-    private static void performOperation(Map<String,String> hashMap){
+    private static void performOperation(Map<String,String> cmdArg){
+        boolean workOnFile=false,workOnClipboard=false;
+        String fileName = "";
         //checking for options
         if(cmdArg.containsKey(Constants.FILE[0]) || cmdArg.containsKey(Constants.FILE[1])) {
             workOnFile = true;
@@ -60,8 +62,7 @@ class Redirect{
     }
     public static void main(String[] args) {
         ParseEText parse = new ParseEText();
-        boolean workOnFile=false,workOnClipboard=false;
-        String fileName = "";
+
         parse.checkingRules(args);//checking command rule and if all perfect then it will add the command data pair to HAShMAP
         performOperation(parse.getCmdArgs());
     }

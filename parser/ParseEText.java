@@ -32,7 +32,7 @@ class ParseEText{
     private void addingRule(Map<String,Map<Integer,List<String>>> commandInfoWithRules, Map<Integer,List<String>> rulesCount, String cmdOrOption,       List<String> rules,int noOfArgs){
         rulesCount.put(noOfArgs,rules);
         commandInfoWithRules.put(cmdOrOption,rulesCount);
-        System.out.println(commandInfoWithRules.get(cmdOrOption));
+//        System.out.println(commandInfoWithRules.get(cmdOrOption));
     }
     private void addingRules(){
         readRule.add(Arguments.RULE1);
@@ -74,7 +74,7 @@ class ParseEText{
                     commandList.remove(i);
                     commandList.remove(i);
                 } else {
-                    System.out.println("U missed some argument... Try HELP command... etext -h");
+                    System.out.println("U missed some argument...");
                     flag = false;
                     isError=true;
                     break;
@@ -130,10 +130,11 @@ class ParseEText{
             }
         }
         if(commandList.size()>0 && !isError){
-            System.out.println("U missed some argument... Try HELP command... etext -h");
+            System.out.println("U missed some argument...");
             cmdArgs.clear();
         }
-        System.out.println(cmdArgs);
+//        System.out.println(cmdArgs);
+
 
 
 
@@ -147,7 +148,7 @@ class ParseEText{
                     commandList.remove(0);
                     commandList.remove(0);
                 } else {
-                    System.out.println("U missed some argument... Try HELP command... etext -h");
+                    System.out.println("U missed some argument...");
                     flag = false;
                     isError=true;
                     break;

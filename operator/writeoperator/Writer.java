@@ -1,4 +1,5 @@
 package operator.writeoperator;
+import helper.apihelper.*;
 import helper.connectionhelper.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -28,11 +29,21 @@ public class Writer {
 
     public static void write(String name, String content) {
         try {
+            if(content.equals("")){
+                System.out.println("Empty text cannot be written");
+            }else if(name.equals("")){
+                System.out.println("Empty name!!");
+            }else {
+                String pasteKey = APIHelper.getPasteKey(name);
+                if (!pasteKey.equals("")) {
+                    APIHelper.deletePaste(pasteKey);
+                }
 
-            String apiPasteName = URLEncoder.encode(name, "UTF-8");
-            String apiPasteCode = URLEncoder.encode(content, "UTF-8");
-            String postParams = "api_option="+API_WRITE_OPTION+"&api_user_key=" + API_USER_KEY + "&api_paste_private=" + API_PASTE_PRIVATE + "&api_paste_name=" + apiPasteName + "&api_paste_expire_date=" + API_PASTE_EXPIRE_DATE + "&api_dev_key=" + API_DEV_KEY + "&api_paste_code=" + apiPasteCode + "";
-            ConnectionHelper.sendPOST(WRITE_URL, postParams);
+                String apiPasteName = URLEncoder.encode(name, "UTF-8");
+                String apiPasteCode = URLEncoder.encode(content, "UTF-8");
+                String postParams = "api_option=" + API_WRITE_OPTION + "&api_user_key=" + API_USER_KEY + "&api_paste_private=" + API_PASTE_PRIVATE + "&api_paste_name=" + apiPasteName + "&api_paste_expire_date=" + API_PASTE_EXPIRE_DATE + "&api_dev_key=" + API_DEV_KEY + "&api_paste_code=" + apiPasteCode + "";
+                ConnectionHelper.sendPOST(WRITE_URL, postParams);
+            }
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }catch(IOException ioe){

@@ -14,12 +14,20 @@ import java.net.URLEncoder;
 
 public class Append {
     public static void append(String pasteTitle,String text) {
-
+        if(text.equals("")){
+            System.out.println("Empty text cannot be written");
+        }else if(pasteTitle.equals("")){
+            System.out.println("Empty name!!");
+        }else {
             String pasteKey = APIHelper.getPasteKey(pasteTitle);
-            String oldText = Reader.read(pasteTitle);
-            APIHelper.deletePaste(pasteKey);
-            Writer.write(pasteTitle,oldText+"\n"+text);
 
-
+            if (pasteKey.equals("")) {
+                System.out.println(pasteTitle + " not found");
+            } else {
+                String oldText = Reader.read(pasteTitle);
+                APIHelper.deletePaste(pasteKey);
+                Writer.write(pasteTitle, oldText + "\n" + text);
+            }
+        }
     }
 }
